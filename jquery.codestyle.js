@@ -1,7 +1,7 @@
 /**
  * Plug-In name: jquery.codeStyle.js
- * Versions: 1.0.4
- * Modify time: 2016/11/21
+ * Versions: 1.0.5
+ * Modify time: 2016/11/22
  * Created by TomnTang on 2016/11/16
  * Website: http://www.lovevivi.com/plugin/jquery.codestyle.js/
  */
@@ -56,7 +56,7 @@
                 case 'javascript':
                     var keyword = codeKeyword[set.type];
                     html = html.replace(/([\'\"]([^\'\"]*)[\'\"])/g, '<span class="code-style-string">$1</span>') // 属性值
-                        .replace(new RegExp('('+ keyword +')', 'g'), '<span class="code-style-keyword">$1</span>') // 关键字
+                        .replace(new RegExp('\\b('+ keyword +')\\b', 'g'), '<span class="code-style-keyword">$1</span>') // 关键字
                         .replace(new RegExp('(\/\/.*)', 'g'), '<span class="code-style-comment">$1</span>'); // 单行注释
                     break;
                 case 'html':
