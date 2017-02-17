@@ -1,7 +1,7 @@
 /**
  * Plug-In name: jquery.codeStyle.js
- * Versions: 1.0.5
- * Modify time: 2016/11/22
+ * Versions: 1.0.6
+ * Modify time: 2017/02/17
  * Created by TomnTang on 2016/11/16
  * Website: http://www.lovevivi.com/plugin/jquery.codestyle.js/
  */
@@ -46,9 +46,6 @@
             if (set.encode) {
                 html = html.replace(/</g, '&lt;')
                     .replace(/>/g, '&gt;');
-                /*.replace(/'/g, '&#39;')
-                 .replace(/\s/g, '&nbsp;')
-                 .replace(/"/g, '&quot;');*/
             }
 
             // 格式化代码
@@ -77,7 +74,6 @@
             }
             $('.code-style-comment').find('*').addClass('code-style-comment'); // 处理注释内的样式
 
-            console.log('html= '+ html);
             // 生成代码区域
             that.html('<ol class="code-style-ol code-style-'+ set.type +'"><li><span>'
                 + html.replace(/[\r\n\t]+/g, '</span></li><li><span>')
