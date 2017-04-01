@@ -33,6 +33,12 @@
     position: relative;
     overflow: auto;
 }
+.code-style .code-style-ol.code-style-show {
+    display: block;
+}
+.code-style .code-style-ol.code-style-hidden {
+    display: none;
+}
 .code-style .code-style-ol li {
     margin-left: 50px;
     padding: 2px 5px;
