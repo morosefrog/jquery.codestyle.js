@@ -1,7 +1,7 @@
 /**
  * Plug-In name: jquery.codeStyle.js
- * Versions: 1.0.6
- * Modify time: 2017/02/17
+ * Versions: 1.0.7
+ * Modify time: 2017/04/01
  * Created by TomnTang on 2016/11/16
  * Website: http://www.lovevivi.com/plugin/jquery.codestyle.js/
  */
@@ -15,6 +15,7 @@
             fontsize: '12px',
             encode: true,
             toggle: true,
+            show: true,
             about: 'http://www.lovevivi.com/plugin/jquery.codestyle.js/'
         };
 
@@ -36,6 +37,7 @@
             set.title = that.attr('code-style-title') ? that.attr('code-style-title') : (that.attr('code-style-type') ? that.attr('code-style-type') : settings.type);
             set.encode = that.attr('code-style-encode') !== undefined ? getBoolean(that.attr('code-style-encode')) : settings.encode;
             set.toggle = that.attr('code-style-toggle') !== undefined ? getBoolean(that.attr('code-style-toggle')) : settings.toggle;
+            set.show = that.attr('code-style-show') !== undefined ? getBoolean(that.attr('code-style-show')) : settings.show;
             set.fontSize = that.attr('code-style-fontsize') ? that.attr('code-style-fontsize') : settings.fontsize;
             set.height = that.attr('code-style-height') ? that.attr('code-style-height') : settings.height;
             set.skin = that.attr('code-style-skin') ? that.attr('code-style-skin') : settings.skin;
@@ -75,7 +77,7 @@
             $('.code-style-comment').find('*').addClass('code-style-comment'); // 处理注释内的样式
 
             // 生成代码区域
-            that.html('<ol class="code-style-ol code-style-'+ set.type +'"><li><span>'
+            that.html('<ol class="code-style-ol code-style-'+ set.type +' code-style-'+ (set.show ? 'show' : 'hidden') +'"><li><span>'
                 + html.replace(/[\r\n\t]+/g, '</span></li><li><span>')
                 + '</span></li></ol>'
             ).css('fontSize', set.fontSize); // 设置代码字体大小
